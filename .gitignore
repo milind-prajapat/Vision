@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*Vision-2.0-2020-Arena
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
