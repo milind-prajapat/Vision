@@ -48,8 +48,6 @@ def Detection():
     List = [[1,2,3],[4,5,6]]
 
     for i, color in enumerate(color_dict):
-        print(f"Select {color} Color")
-
         img = Image()
 
         blur = cv2.bilateralFilter(img,9,75,75) 
@@ -307,8 +305,6 @@ def Move(Best_Path):
                 if (theta <= 5 and theta >=-5):
                     Last_Movement = "F"
                     Forward(int(d))
-                elif d < 24 and theta >= 172 and theta <= -172:
-                     break
                 elif theta >= 125 or theta <= -125:
                     if theta >= 175 or theta <= -175:
                         Last_Movement = "B"
