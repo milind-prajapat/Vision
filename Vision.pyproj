@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>094275ae-a3c7-4b2d-832b-06b38580771f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Vision.py</StartupFile>
+    <StartupFile>Solution.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Solution.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Vision.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

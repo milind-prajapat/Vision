@@ -1,3 +1,4 @@
+from os import system
 import cv2
 import cv2.aruco as aruco
 import numpy as np
@@ -5,25 +6,10 @@ import gym
 import vision_arena
 import pybullet as p
 
-def Image(is_first = False):
-    global A1, A2, env
+def Image():
+    global env
 
-    if is_first:
-        print("Instructions:")
-        print("Crop The Image To Arena Size (Removing Additional Black Stripes).")
-        img = env.camera_feed()
-        A1 = np.array(img.shape[:2])
-        
-        r = cv2.selectROI(img)
-        crop = img[int(r[1]):int(r[1]+r[3]),int(r[0]):int(r[0]+r[2])]
-        
-        A2 = np.array(crop.shape[:2])
-        A1 = (A1 - A2) / 2
-        
-        cv2.destroyAllWindows()
-    else:
-        img = env.camera_feed()
-        return img
+    return env.camera_feed()
 
 def Bot_Pos():
     global A1, A2, aruco_dict, Last_Movement
@@ -55,33 +41,19 @@ def Bot_Pos():
 
 def Detection():
     global A, A1, A2
-    Dict = {0:"Red",1:"Yellow"}
+
+    color_dict = {'Red'    : np.array([[  0,   0, 145], [  0,   0, 145]], dtype = np.int),
+                  'Yellow' : np.array([[  0, 227, 227], [  0, 227, 227]], dtype = np.int)}
+
     List = [[1,2,3],[4,5,6]]
 
-    print("Take Double Color Sample For Both Colours (Red, Yellow) One By One.")
-    thresh = 15
-
-    for i in range(2):
-        print("Select",Dict[i],"Color",end = "\t")
+    for i, color in enumerate(color_dict):
+        print(f"Select {color} Color")
 
         img = Image()
 
-        r1 = cv2.selectROI(img)
-        crop1 = img[int(r1[1]):int(r1[1]+r1[3]),int(r1[0]):int(r1[0]+r1[2])]
-
-        lower1 = np.array([crop1[:,:,0].min()-thresh,crop1[:,:,1].min()-thresh,crop1[:,:,2].min()-thresh])
-        upper1 = np.array([crop1[:,:,0].max()+thresh,crop1[:,:,1].max()+thresh,crop1[:,:,2].max()+thresh])
-
-        r2 = cv2.selectROI(img)
-        crop2 = img[int(r2[1]):int(r2[1]+r2[3]),int(r2[0]):int(r2[0]+r2[2])]
-
-        lower2 = np.array([crop2[:,:,0].min()-thresh,crop2[:,:,1].min()-thresh,crop2[:,:,2].min()-thresh])
-        upper2 = np.array([crop2[:,:,0].max()+thresh,crop2[:,:,1].max()+thresh,crop2[:,:,2].max()+thresh])
-
-        print(Dict[i],"Color Selected Sucessfully.")
-
         blur = cv2.bilateralFilter(img,9,75,75) 
-        mask = cv2.bitwise_or(cv2.inRange(blur, lower1, upper1), cv2.inRange(blur, lower2, upper2))
+        mask = cv2.inRange(blur, color_dict[color][0] - 10, color_dict[color][1] + 10)
         mask = cv2.dilate(mask, np.ones((5,5), dtype = np.uint8), iterations = 1)
         mask = cv2.erode(mask, np.ones((3,3), dtype = np.uint8), iterations = 1)
 
@@ -109,12 +81,6 @@ def Detection():
                     A[x][y] = List[i][1]
                 else:
                     A[x][y] = List[i][2]
-
-        print("Shape Detection For Color",Dict[i],"Done Sucessfully.")
-        cv2.imshow("Detection",res)
-        print("Press Any Key To Continue.")
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
 
 def Cell(X,Y):
     global Open, Closed
@@ -365,13 +331,16 @@ def init(is_first = False):
         Interpretation = {"Black":0, "SR":1, "CR":2, "TR":3, "SY":4, "CY":5, "TY":6}
         Read = {1:"Red Square", 2:"Red Circle", 3:"Red Triangle", 4:"Yellow Square", 5:"Yellow Circle", 6:"Yellow Triangle"}
         A = np.zeros([9,9], dtype = np.int32) # Arena
-        A1 = np.zeros([2], dtype = np.int32) # Black Stripes Thickness
-        A2 = np.zeros([2], dtype = np.int32) # Image Size
+        A1 = np.array([ 18,  18], dtype = np.int32) # Black Stripes Thickness
+        A2 = np.array([476, 475], dtype = np.int32) # Image Size
 
         env = gym.make("vision_arena-v0")
+
+        system('cls')
+
         aruco_dict = aruco.Dictionary_get(aruco.DICT_ARUCO_ORIGINAL)
 
-        Image(True)
+        Image()
         Detection()
     else:
         env.remove_car()
