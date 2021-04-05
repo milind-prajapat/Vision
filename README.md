@@ -5,7 +5,7 @@ This project is based on the instructions given in the following [Problem Statem
 
 ## Installation Guidelines
 Along with this repository, it is needed to have the following repository:
-1. [Vision_Arena](https://github.com/Robotics-Club-IIT-BHU/Vision-2.0-2020-Arena)
+* [Vision_Arena](https://github.com/Robotics-Club-IIT-BHU/Vision-2.0-2020-Arena)
 
 Follow the steps given in these repositories and install the packages required.
 
