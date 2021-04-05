@@ -19,4 +19,4 @@ You can either run the code directly on visual studio using [Vision.sln](https:/
 * The bot uses the differential drive for the movements.
 
 ## References
-1. [Run on Vision-Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
+* [Run on Vision-Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
