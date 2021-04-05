@@ -7,6 +7,10 @@ This project is based on the instructions given in the following [Problem Statem
 Along with this repository, it is needed to have the following repository:
 1. [Vision_Arena](https://github.com/Robotics-Club-IIT-BHU/Vision-2.0-2020-Arena)
 
+Follow the steps given in these repositories and install the packages required.
+
+You can either run the code directly on visual studio using [Vision.sln](https://github.com/milind-prajapat/Vision/blob/main/Vision.sln) or can run [Solution.py](https://github.com/milind-prajapat/Vision/blob/main/Solution.py).
+
 ## Project Features
 * Visual representation of the arena and the bot movements were done using pybullet.
 * Image processing techniques using OpenCV was used to manipulate the data, i.e., shape, colour and aruco marker detection in programmable form.
