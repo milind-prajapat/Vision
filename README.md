@@ -15,8 +15,8 @@ You can either run the code directly on visual studio using [Vision.sln](https:/
 * Visual representation of the arena and the bot movements were done using pybullet.
 * Image processing techniques using OpenCV was used to manipulate the data, i.e., shape, colour and aruco marker detection in programmable form.
 * The arena was converted into a 2-D matrix where a particular node number denoted each square in the arena.
-* BFS( Breadth-First Search) algorithm i used to determine the shortest path to reach the destination node. 
-* For movements, the bot is first aligned and then moved. The bot is using differential drive along with reverse operations to save time.
+* Breadth First Search algorithm determined the shortest path to reach the destination node.
+* The bot uses the differential drive for the movements.
 
 ## References
 1. [Run on Vision-Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
