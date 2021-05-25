@@ -14,6 +14,7 @@ You can either run the code directly on visual studio using [Vision.sln](https:/
 ## Approach
 1. The arena was converted into a 2D matrix using image processing techniques where a particular node number denoted each square of the arena
 2. Breadth First Search Path Finding Algorithm was used to determine the shortest path to the destination node
+3. Nodes were inserted into the list on a priority basis to prefer the inner path
 4. We used the differential drive to run the bot more efficiently
 
 ## Features
