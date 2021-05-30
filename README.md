@@ -9,7 +9,7 @@ Along with this repository, it is needed to have the following repository:
 
 Follow the steps given in these repositories and install the packages required.
 
-You can then either run the code directly on visual studio using [Vision.sln](https://github.com/milind-prajapat/Vision/blob/main/Vision.sln) or can run [Solution.py](https://github.com/milind-prajapat/Vision/blob/main/Solution.py).
+You can then either run the code directly on the visual studio using [Vision.sln](https://github.com/milind-prajapat/Vision/blob/main/Vision.sln) or can run [Solution.py](https://github.com/milind-prajapat/Vision/blob/main/Solution.py).
 
 ## Approach
 1. The arena was converted into a 2D matrix using image processing techniques where a particular node number denoted each square of the arena
@@ -23,4 +23,4 @@ You can then either run the code directly on visual studio using [Vision.sln](ht
 3. **Breadth-First Search Path Finding Algorithm** determined the shortest path to reach the destination node
 
 ## References
-* [Run on Vision_Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
+* [Run-on Vision_Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
