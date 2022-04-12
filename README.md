@@ -1,5 +1,5 @@
 # Vision
-A Project-Based On Image processing And Breadth-First Search Path Finding Algorithm
+An Autonomous Bot Based On Image processing And Breadth-First Search Path Finding Algorithm
 
 This project is based on the instructions given in the following [Problem Statement](https://drive.google.com/file/d/1gC5mwmm_vMUPtPOinPhZ4rZZTMcA5sih/view?usp=sharing).
 
