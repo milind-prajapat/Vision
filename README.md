@@ -1,7 +1,7 @@
 # Vision
 An Autonomous Bot Based On Image processing And Breadth-First Search Path Finding Algorithm
 
-This project is based on the instructions given in the following [Problem Statement](https://drive.google.com/file/d/1gC5mwmm_vMUPtPOinPhZ4rZZTMcA5sih/view?usp=sharing).
+This project is based on the instructions given in the following [Problem Statement](https://drive.google.com/file/d/1m8MQW905B8YQG0gZlL-Lr8UHkEMwderH/view?usp=drive_link).
 
 ## Installation Guidelines
 Along with this repository, it is needed to have the following repository:
@@ -23,4 +23,4 @@ You can then either run the code directly on the visual studio using [Vision.sln
 3. **Breadth-First Search Path Finding Algorithm** determined the shortest path to reach the destination node
 
 ## References
-* [Run-on Vision_Arena](https://drive.google.com/file/d/16UYtqpRY0y2ey_q_UJsuPqzUj9xVu7Z1/view?usp=sharing)
+* [Run-on Vision_Arena](https://drive.google.com/file/d/1ciIOD9bVBam_VBxqgUS7PRWptOS5gvOn/view?usp=drive_link)
